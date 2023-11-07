@@ -51,10 +51,11 @@
     </build>
          
     <distributionManagement>
-        <snapshotRepository>
+        <repository>
             <id>maven-releases</id>
+            <name>maven-releases</name>
             <url>http://192.168.179.26:9081/repository/maven-releases/</url>
-        </snapshotRepository>
+        </repository>
     </distributionManagement>
 
 </project>
