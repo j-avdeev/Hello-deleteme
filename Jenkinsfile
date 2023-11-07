@@ -20,7 +20,7 @@ pipeline {
                     def mvnCmd = "${env.MAVEN_HOME}/bin/mvn"
                     
                     // Build the Maven project
-                    sh "${mvnCmd} clean package"
+                    sh "${mvnCmd} clean package deploy"
                     
                     // Deploy the artifact to Nexus
                     sh "${mvnCmd} deploy:deploy-file " +
