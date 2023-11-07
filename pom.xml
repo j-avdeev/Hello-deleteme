@@ -53,7 +53,7 @@
     <distributionManagement>
         <snapshotRepository>
             <id>maven-releases</id>
-            <url>http://192.168.179.26:9081/repository/maven-reseases/</url>
+            <url>http://192.168.179.26:9081/repository/maven-releases/</url>
         </snapshotRepository>
     </distributionManagement>
 
