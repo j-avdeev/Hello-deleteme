@@ -23,14 +23,7 @@ pipeline {
                     sh "${mvnCmd} clean package deploy"
                     
                     // Deploy the artifact to Nexus
-                    sh "${mvnCmd} deploy:deploy-file " +
-                       "-Durl=http://192.168.179.26:9081/repository/maven-rereases/ " +
-                       "-DrepositoryId=nexus-releases " +
-                       "-Dfile=target/hello-0.0.1.jar " +
-                       "-DgroupId=zufarexplainedit " +
-                       "-DartifactId=hello " +
-                       "-Dversion=0.0.1 " +
-                       "-Dpackaging=jar"
+                    sh " curl -v -u admin:admin123 --upload-file /bitnami/jenkins/home/workspace/Pull_code_Nexus/target/hello-0.0.1.jar http://192.168.179.26:9081/repository/maven-releases/hello/0.0.1-SNAPSHOT/hello-0.0.1.jar"
                 }
             }
         }
