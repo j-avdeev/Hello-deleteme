@@ -40,7 +40,7 @@ pipeline {
                     nexusUrl: '${NEXUS_IP}:${NEXUS_PORT}',
                     groupId: 'zufarexplainedit',
                     version: 0.0.1,
-                    repository: 'maven-releases',
+                    repository: 'hello-maven',
                     credentialsId: '${NEXUS_LOGIN}',
                     artifacts: [
                         [artifactId: hello,
