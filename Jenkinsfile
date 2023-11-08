@@ -27,30 +27,30 @@ pipeline {
                     sh "${mvnCmd} clean package"
                     
                     // Deploy the artifact to Nexus
-                    // sh " curl -v -u admin:admin123 --upload-file /bitnami/jenkins/home/workspace/Pull_code_Nexus/target/hello-0.0.1.jar http://192.168.179.26:9081/repository/maven-releases/hello/0.0.1-SNAPSHOT/hello-0.0.1.jar"
+                    sh " curl -v -u admin:admin123 --upload-file /bitnami/jenkins/home/workspace/Pull_code_Nexus/target/hello-0.0.1.jar http://192.168.179.26:9081/repository/hello-maven/zufarexplainedit/hello/0.0.1/hello-0.0.1.jar"
                 }
             }
         }
 
-        stage('Upload Artifact'){
-            steps{
-                nexusArtifactUploader(
-                    nexusVersion: 'nexus3',
-                    protocol: 'http',
-                    nexusUrl: '${NEXUS_IP}:${NEXUS_PORT}',
-                    groupId: 'zufarexplainedit',
-                    version: 0.0.1,
-                    repository: 'hello-maven',
-                    credentialsId: '${NEXUS_LOGIN}',
-                    artifacts: [
-                        [artifactId: hello,
-                         classifier: '',
-                         file: 'hello-0.0.1.jar',
-                         type: 'jar']
-                    ]
-                ) 
-            }
+//        stage('Upload Artifact'){
+//            steps{
+//                nexusArtifactUploader(
+//                    nexusVersion: 'nexus3',
+//                    protocol: 'http',
+//                    nexusUrl: '${NEXUS_IP}:${NEXUS_PORT}',
+//                    groupId: 'zufarexplainedit',
+//                    version: 0.0.1,
+//                    repository: 'hello-maven',
+//                    credentialsId: '${NEXUS_LOGIN}',
+//                    artifacts: [
+//                        [artifactId: hello,
+//                         classifier: '',
+//                         file: 'hello-0.0.1.jar',
+//                         type: 'jar']
+//                    ]
+//                ) 
+//            }
             
-        }
+//        }
     }
 }
