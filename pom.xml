@@ -52,9 +52,9 @@
          
     <distributionManagement>
         <repository>
-            <id>maven-releases</id>
-            <name>maven-releases</name>
-            <url>http://192.168.179.26:9081/repository/maven-releases/</url>
+            <id>hello-maven</id>
+            <name>hello-maven</name>
+            <url>http://192.168.179.26:9081/repository/hello-maven/</url>
         </repository>
     </distributionManagement>
 
